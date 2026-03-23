@@ -1,4 +1,4 @@
-# Flood Level Monitoring API
+# Simplified Flood Level Monitoring API
 **Full-Stack Demo for Eurac Research (RECEPTIC IoT Developer Role)**  
 **Author:** Abdul Fikri | **Date:** March 2026  
 **Contact:** afikri@cseas.kyoto-u.ac.jp | +81 70 8905 7097
