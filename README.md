@@ -29,11 +29,8 @@
 3. **PostgreSQL** stores readings with integrity constraints
 4. **React Frontend** fetches data and displays interactive map
 5. **Django Admin** provides CRUD interface for station management
-
 ---
-
 ## Quick Start Guide
-
 ### Prerequisites
 - Python 3.10+
 - PostgreSQL 15+
@@ -63,8 +60,10 @@ python manage.py runserver
 cd ui
 npm install
 npm run dev
+```
 
 ### 3. IoT Simulator 
 ```bash
 # Run python program
 python simulator/send_data.py
+```
