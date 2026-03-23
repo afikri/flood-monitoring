@@ -22,3 +22,50 @@
 
 ## Architecture Overview
 ![System Architecture](architecture.png)
+
+# Flood Level Monitoring API
+**Data Flow:**
+1. **IoT Simulator** sends sensor data via HTTP POST
+2. **Django Backend** validates and calculates alert status (server-side)
+3. **PostgreSQL** stores readings with integrity constraints
+4. **React Frontend** fetches data and displays interactive map
+5. **Django Admin** provides CRUD interface for station management
+
+---
+
+## Quick Start Guide
+
+### Prerequisites
+- Python 3.10+
+- PostgreSQL 15+
+- Node.js 18+
+- Conda (optional, for environment management)
+
+### 1. Backend (Django + PostgreSQL)
+```bash
+# Activate environment
+conda activate django_env
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Run migrations
+python manage.py migrate
+
+# Create admin user
+python manage.py createsuperuser
+
+# Start server
+python manage.py runserver
+
+### 2. Frontend/UI (React)
+```bash
+# Activate environment
+cd ui
+npm install
+npm run dev
+
+### 3. IoT Simulator 
+```bash
+# Run python program
+python simulator/send_data.py
