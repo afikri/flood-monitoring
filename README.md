@@ -1,4 +1,4 @@
-# 🌊 Flood Level Monitoring API
+# Flood Level Monitoring API
 **Full-Stack Demo for Eurac Research (RECEPTIC IoT Developer Role)**  
 **Author:** Abdul Fikri | **Date:** March 2026  
 **Contact:** afikri@cseas.kyoto-u.ac.jp | +81 70 8905 7097
@@ -7,7 +7,7 @@
 
 ---
 
-## 🎯 Relevance to RECEPTIC Project
+## Relevance to RECEPTIC Project
 
 | RECEPTIC Requirement | This Demo | My CV Experience |
 |---------------------|-----------|------------------|
@@ -21,75 +21,4 @@
 ---
 
 ## Architecture Overview
-┌─────────────────────────────────────────────────────────────────────────────┐
-│                        FLOOD LEVEL MONITORING SYSTEM                        │
-│                     Full-Stack IoT Pipeline for RECEPTIC                    │
-└─────────────────────────────────────────────────────────────────────────────┘
-
-┌─────────────────┐      HTTP POST       ┌─────────────────────────────────┐
-│   IoT Simulator │ ──────────────────>  │         Django Backend          │
-│   (ESP32 Mimic) │   /api/v1/readings/  │         (Django 5.2 LTS)        │
-│   Python +      │   JSON Payload:      │                                 │
-│   requests lib  │   {water_level,      │  ┌───────────────────────────┐  │
-│                 │    battery_pct,      │  │    DRF ViewSets           │  │
-│                 │    station_id}       │  │    - StationViewSet       │  │
-│                 │                      │  │    - ReadingViewSet       │  │
-│                 │                      │  └─────────────┬─────────────┘  │
-│                 │                      │                │                │
-│                 │                      │  ┌─────────────▼─────────────┐  │
-│                 │                      │  │   Server-Side Validation  │  │
-│                 │                      │  │   - Alert status calc     │  │
-│                 │                      │  │   - Threshold comparison  │  │
-│                 │                      │  │   - Data integrity check  │  │
-│                 │                      │  └─────────────┬─────────────┘  │
-└─────────────────┘                      └────────────────────────────────┘
-                                                         │ ORM
-                                                         ▼
-                                          ┌─────────────────────────────────┐
-                                          │         PostgreSQL 15           │
-                                          │      (flood_monitoring_db)      │
-                                          │                                 │
-                                          │  ┌───────────────────────────┐  │
-                                          │  │   api_sensorstation       │  │
-                                          │  │   - id, station_id        │  │
-                                          │  │   - name, latitude        │  │
-                                          │  │   - longitude, threshold  │  │
-                                          │  └───────────────────────────┘  │
-                                          │                                 │
-                                          │  ┌───────────────────────────┐  │
-                                          │  │   api_waterlevelreading   │  │
-                                          │  │   - id, water_level       │  │
-                                          │  │   - battery_pct, status   │  │
-                                          │  │   - timestamp, station    │  │
-                                          │  └───────────────────────────┘  │
-                                          └────────────────────────────────┘
-                                                           │
-                         ┌─────────────────────────────────┼─────────────────────────────────┐
-                         │                                 │                                 │
-                         ▼                                 ▼                                 ▼
-            ┌─────────────────────┐            ┌─────────────────────┐            ┌─────────────────────┐
-            │   Django Admin      │            │   REST API          │            │   IoT Simulator     │
-            │   /admin/           │            │   /api/v1/          │            │   (Data Ingestion)  │
-            │   - CRUD stations   │            │   - GET stations    │            │   - POST readings   │
-            │   - View readings   │            │   - GET readings    │            │   - Auto-alert      │
-            │   - Manage users    │            │   - CORS enabled    │            │   - 10s interval    │
-            └─────────────────────┘            └──────────┬──────────┘            └─────────────────────┘
-                                                          │ HTTP GET
-                                                          ▼
-                                          ┌─────────────────────────────────┐
-                                          │         Frontend                │
-                                          │    React 18 + TypeScript        │
-                                          │                                 │
-                                          │  ┌───────────────────────────┐  │
-                                          │  │   Leaflet Map Component   │  │
-                                          │  │   - Station markers       │  │
-                                          │  │   - Popup info            │  │
-                                          │  │   - Real-time updates     │  │
-                                          │  └───────────────────────────┘  │
-                                          │                                 │
-                                          │  ┌───────────────────────────┐  │
-                                          │  │   Axios HTTP Client       │  │
-                                          │  │   - API integration       │  │
-                                          │  │   - Error handling        │  │
-                                          │  └───────────────────────────┘  │
-                                          └─────────────────────────────────┘
+![System Architecture](architecture.png)
