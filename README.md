@@ -53,7 +53,7 @@ python manage.py createsuperuser
 
 # Start server
 python manage.py runserver
-
+```
 ### 2. Frontend/UI (React)
 ```bash
 # Activate environment
