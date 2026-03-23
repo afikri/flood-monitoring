@@ -27,7 +27,7 @@ function App() {
   return (
     <>
       <div style={{ textAlign: 'center', fontFamily: 'sans-serif' }}>
-      <h1>🌊 Flood Level Monitoring</h1>
+      <h1>Flood Level Monitoring</h1>
       <p>Demo for Eurac Research (RECEPTIC Role)</p>
       
       <MapContainer 
