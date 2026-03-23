@@ -15,10 +15,8 @@ interface Station {
 
 function App() {
   const [stations, setStations] = useState<Station[]>([])
-
-  
   useEffect(() => {
-    // Fetch from Django API
+    // Fetch data from Django API
     axios.get('http://127.0.0.1:8000/api/v1/stations/')
       .then(res => setStations(res.data))
       .catch(err => console.error("API Error:", err))

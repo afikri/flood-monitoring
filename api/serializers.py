@@ -4,7 +4,7 @@ from .models import SensorStation, WaterLevelReading
 class WaterLevelReadingSerializer(serializers.ModelSerializer):
     """
     Converts WaterLevelReading models to JSON for IoT ingestion.
-    CV Link: Similar to data interoperability work at UNICEF (API exchanges).
+    to promote data interoperability
     """
     class Meta:
         model = WaterLevelReading
