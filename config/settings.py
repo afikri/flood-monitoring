@@ -98,7 +98,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'flood_monitoring_db',
         'USER': 'django_user',
-        'PASSWORD': 'adfpnxpnk3',
+        'PASSWORD': 'your_user_password',
         'HOST': 'localhost',
         'PORT': '5432',
     }
