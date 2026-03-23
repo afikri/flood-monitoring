@@ -23,8 +23,7 @@
 ## Architecture Overview
 ![System Architecture](architecture.png)
 
-# Flood Level Monitoring API
-**Data Flow:**
+## Data Flow
 1. **IoT Simulator** sends sensor data via HTTP POST
 2. **Django Backend** validates and calculates alert status (server-side)
 3. **PostgreSQL** stores readings with integrity constraints
